@@ -3,9 +3,13 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
+  const [photoURL, setPhotoURL] = useState();
+
+  function getPhoto(date) {}
+
   return (
     <div className="App">
-      <h1>NASA PHOTO OF THE DAY</h1>
+      <div className="photo-container"></div>
     </div>
   );
 }
