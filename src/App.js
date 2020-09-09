@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Photo from "./Components/Photo";
 import { BASE_URL, API_KEY } from "./constants/const";
-import Copyright from "./Components/Copywrite";
 
 function App() {
-  const [url, setUrl] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
   const [copyright, setCopyright] = useState("");
   const [explanation, setExplanation] = useState("");
   const [title, setTitle] = useState("");
@@ -15,7 +13,7 @@ function App() {
     axios
       .get(`${BASE_URL}?api_key=${API_KEY}`)
       .then((res) => {
-        setUrl(res.data.url);
+        setPhotoURL(res.data.url);
         setExplanation(res.data.explanation);
         setCopyright(res.data.copyright);
         setTitle(res.data.title);
@@ -26,13 +24,20 @@ function App() {
   console.log(copyright);
   return (
     <div className="App">
-      <div className="photo-container">
-        <Photo url={url} />
-        <Copyright copyright={copyright} />
-      </div>
-      <div className="info-container">
-        {/*Title Component*/}
-        {/*Explanation Component*/}
+      <div className="container">
+        <header>
+          <h3>DAILY SPACE FACTS</h3>
+        </header>
+        <section className="photo-container">
+          <img src={photoURL} alt="photo of the day" />
+        </section>
+        <section className="info-section">
+          <h1 className="title">{title}</h1>
+          <p>{explanation}</p>
+        </section>
+        <footer>
+          <p>{`© ${copyright}`}</p>
+        </footer>
       </div>
     </div>
   );
