@@ -3,10 +3,14 @@ import React from "react";
 
 const StyledHeader = styled.header`
   width: 100%;
+  grid-column: 2 / span 6;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  box-shadow: 3px;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
 `;
 
 export default function Header(props) {

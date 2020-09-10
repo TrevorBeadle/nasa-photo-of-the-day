@@ -52,6 +52,7 @@ function App() {
     <StyledApp>
       <div className="App">
         <Header url={LOGO_URL} />
+        <section className="photo-section"></section>
       </div>
     </StyledApp>
   );
