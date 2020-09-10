@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import { BASE_URL, API_KEY } from "./constants/const";
+import { BASE_URL, API_KEY, LOGO_URL } from "./constants/const";
 import DatePicker from "./Components/DatePicker";
-import Container from "./Components/Container";
+import styled from "styled-components";
+import Header from "./Components/Header";
+
+const StyledApp = styled.div`
+  background-image: ${({ theme }) => theme.backgroundGradient};
+  width: 100%;
+  height: 100%;
+`;
 
 function App() {
   const [photoURL, setPhotoURL] = useState("");
@@ -42,9 +49,11 @@ function App() {
 
   console.log(copyright);
   return (
-    <div className="App">
-      <Container />
-    </div>
+    <StyledApp>
+      <div className="App">
+        <Header url={LOGO_URL} />
+      </div>
+    </StyledApp>
   );
 }
 
