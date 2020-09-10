@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import { BASE_URL, API_KEY } from "./constants/const";
-import DatePicker from "./DatePicker";
+import DatePicker from "./Components/DatePicker";
 
 function App() {
   const [photoURL, setPhotoURL] = useState("");
@@ -47,17 +47,17 @@ function App() {
           <h3>DAILY SPACE FACTS</h3>
         </header>
         <section className="photo-info">
-          <img src={photoURL} alt="NASA" />
-          <article>
+          <div className="photo">
+            <img src={photoURL} alt="NASA" />
+            <p>{copyright ? `© ${copyright}` : ""}</p>
+          </div>
+          <article className="info">
             <h1 className="title">{title}</h1>
             <h4>NASA Photo of the Day</h4>
             <p>{explanation}</p>
             <DatePicker date={date} setDate={setDate} />
           </article>
         </section>
-        <footer>
-          <p>{copyright ? `© ${copyright}` : ""}</p>
-        </footer>
       </div>
     </div>
   );
