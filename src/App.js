@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import { BASE_URL, API_KEY } from "./constants/const";
+import datePicker from "react-datepicker";
 
 function App() {
   const [photoURL, setPhotoURL] = useState("");
   const [copyright, setCopyright] = useState("");
   const [explanation, setExplanation] = useState("");
   const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}?api_key=${API_KEY}`)
+      .get(`${BASE_URL}?api_key=${API_KEY}${date ? `&date=${date}` : ""}`)
       .then((res) => {
         setPhotoURL(res.data.url);
         setExplanation(res.data.explanation);
@@ -19,7 +21,7 @@ function App() {
         setTitle(res.data.title);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [data]);
 
   console.log(copyright);
   return (
@@ -32,6 +34,7 @@ function App() {
           <img src={photoURL} alt="NASA" />
           <article>
             <h1 className="title">{title}</h1>
+            <h4>NASA Photo of the Day</h4>
             <p>{explanation}</p>
           </article>
         </section>
