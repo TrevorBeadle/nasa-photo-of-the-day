@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { BASE_URL, API_KEY } from "./constants/const";
 import DatePicker from "./Components/DatePicker";
+import Container from "./Components/Container";
 
 function App() {
   const [photoURL, setPhotoURL] = useState("");
@@ -42,7 +43,14 @@ function App() {
   console.log(copyright);
   return (
     <div className="App">
-      <div className="container">
+      <Container />
+    </div>
+  );
+}
+
+export default App;
+
+/* <div className="container">
         <header>
           <h3>DAILY SPACE FACTS</h3>
         </header>
@@ -58,9 +66,4 @@ function App() {
             <DatePicker date={date} setDate={setDate} />
           </article>
         </section>
-      </div>
-    </div>
-  );
-}
-
-export default App;
+      </div> */
