@@ -28,12 +28,12 @@ function App() {
         <header>
           <h3>DAILY SPACE FACTS</h3>
         </header>
-        <section className="photo-container">
-          <img src={photoURL} alt="photo of the day" />
-        </section>
-        <section className="info-section">
-          <h1 className="title">{title}</h1>
-          <p>{explanation}</p>
+        <section className="photo-info">
+          <img src={photoURL} alt="NASA" />
+          <article>
+            <h1 className="title">{title}</h1>
+            <p>{explanation}</p>
+          </article>
         </section>
         <footer>
           <p>{`© ${copyright}`}</p>
