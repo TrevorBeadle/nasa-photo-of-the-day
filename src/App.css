@@ -10,6 +10,7 @@ body {
 
 .App {
     min-height: 100vh;
+    padding-bottom: 4rem;
 }
 
 .photo-info {
@@ -17,11 +18,5 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    margin: 5rem auto;
-}
-
-.date-picker {
-    padding-bottom: 3rem;
-    width: 100%;
-    text-align: center;
+    margin: 5rem auto 0 auto;
 }

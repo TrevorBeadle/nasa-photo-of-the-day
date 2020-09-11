@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Header from "./Components/Header";
 import Photo from "./Components/Photo";
 import Info from "./Components/Info";
-import DatePicker from "./Components/DatePicker";
 import errorMessage from "./constants/404error.jpg";
 
 const StyledApp = styled.div`
@@ -65,11 +64,12 @@ function App() {
         <Header url={LOGO_URL} />
         <div className="photo-info">
           <Photo url={photoURL} copyright={copyright} />
-          <Info title={title} explanation={explanation} />
-        </div>
-        <div className="date-picker">
-          <h4>Change the Date:</h4>
-          <DatePicker date={date} setDate={setDate} />
+          <Info
+            title={title}
+            explanation={explanation}
+            date={date}
+            setDate={setDate}
+          />
         </div>
       </div>
     </StyledApp>

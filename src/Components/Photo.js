@@ -8,7 +8,8 @@ const StyledSection = styled.section`
   justify-content: center;
   align-items: center;
   img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 590px;
   }
 `;
 
@@ -16,7 +17,7 @@ export default function Photo({ url, copyright }) {
   return (
     <StyledSection>
       <img src={url} alt="APOD" />
-      <p>© {copyright}</p>
+      <p>{`${copyright ? `© ${copyright}` : ""}`}</p>
     </StyledSection>
   );
 }
