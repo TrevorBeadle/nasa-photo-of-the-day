@@ -5,9 +5,13 @@ const StyledHeader = styled.header`
   width: 100%;
   grid-column: 2 / span 6;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  img {
+    margin-bottom: 0;
+  }
   h1 {
+    margin-top: 0;
     font-size: 2.5rem;
     font-weight: bold;
   }

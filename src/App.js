@@ -5,6 +5,7 @@ import { BASE_URL, API_KEY, LOGO_URL } from "./constants/const";
 import DatePicker from "./Components/DatePicker";
 import styled from "styled-components";
 import Header from "./Components/Header";
+import Photo from "./Components/Photo";
 
 const StyledApp = styled.div`
   background-image: ${({ theme }) => theme.backgroundGradient};
@@ -52,7 +53,9 @@ function App() {
     <StyledApp>
       <div className="App">
         <Header url={LOGO_URL} />
-        <section className="photo-section"></section>
+        <div className="photo-info">
+          <Photo url={photoURL} copyright={copyright} />
+        </div>
       </div>
     </StyledApp>
   );

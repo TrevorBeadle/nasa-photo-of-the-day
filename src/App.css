@@ -1,11 +1,9 @@
-body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App {
-    height: 100%;
-    display: grid;
-    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+body {
+    font-family: 'Poppins', sans-serif;
 }
