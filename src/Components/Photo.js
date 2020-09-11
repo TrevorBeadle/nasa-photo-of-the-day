@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const StyledSection = styled.section`
   display: flex;
+  width: 45%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
   img {
     width: 100%;
   }

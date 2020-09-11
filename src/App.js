@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import { BASE_URL, API_KEY, LOGO_URL } from "./constants/const";
-import DatePicker from "./Components/DatePicker";
 import styled from "styled-components";
 import Header from "./Components/Header";
 import Photo from "./Components/Photo";
+import Info from "./Components/Info";
+import DatePicker from "./Components/DatePicker";
+import errorMessage from "./constants/404error.jpg";
 
 const StyledApp = styled.div`
   background-image: ${({ theme }) => theme.backgroundGradient};
@@ -44,8 +46,16 @@ function App() {
         setExplanation(res.data.explanation);
         setCopyright(res.data.copyright);
         setTitle(res.data.title);
+        if (res.data.media_type === "video") {
+          setPhotoURL(errorMessage);
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setPhotoURL(errorMessage);
+        setTitle("This Image Could Not Be Found");
+        setExplanation("Sorry for the Inconvenience");
+        setCopyright("Not Found");
+      });
   }, [date]);
 
   console.log(copyright);
@@ -55,6 +65,11 @@ function App() {
         <Header url={LOGO_URL} />
         <div className="photo-info">
           <Photo url={photoURL} copyright={copyright} />
+          <Info title={title} explanation={explanation} />
+        </div>
+        <div className="date-picker">
+          <h4>Change the Date:</h4>
+          <DatePicker date={date} setDate={setDate} />
         </div>
       </div>
     </StyledApp>

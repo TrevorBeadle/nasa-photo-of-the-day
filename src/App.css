@@ -7,3 +7,21 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+
+.App {
+    min-height: 100vh;
+}
+
+.photo-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 5rem auto;
+}
+
+.date-picker {
+    padding-bottom: 3rem;
+    width: 100%;
+    text-align: center;
+}
